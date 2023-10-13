@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 def calculate(*args):
     try:
-        value = str(feet.get()) 
+        value = str(vur.get()) 
         res.set(int(eval(value)))
     except ValueError:
         pass
@@ -15,9 +15,9 @@ mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
-feet = StringVar()
-feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
-feet_entry.grid(column=2, row=1, sticky=(W, E))
+vur = StringVar()
+vur_entry = ttk.Entry(mainframe, width=7, textvariable=vur)
+vur_entry.grid(column=2, row=1, sticky=(W, E))
 
 res = StringVar()
 ttk.Label(mainframe, textvariable=res).grid(column=2, row=2, sticky=(W, E))
@@ -31,5 +31,5 @@ ttk.Label(mainframe).grid(column=3, row=2, sticky=W)
 for child in mainframe.winfo_children(): 
     child.grid_configure(padx=8, pady=8)
 
-feet_entry.focus()
+vur_entry.focus()
 root.bind("<Return>", calculate)
